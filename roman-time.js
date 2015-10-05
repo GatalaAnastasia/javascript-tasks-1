@@ -9,7 +9,9 @@ if (hours<24 && minutes<60 && hours>=0 && minutes>=0)
     if (hours==0) {hoursNew = '0'}
        else{
    switch ((hours - ost)/10)
-   {
+   {case 0:
+       hoursNew ='';
+        break;
     case 1:
        hoursNew ='X';
         break;
@@ -22,8 +24,7 @@ if (hours<24 && minutes<60 && hours>=0 && minutes>=0)
        hoursNew +='I';
         break;
     case 2:
-       hoursNew +='II';
-       
+       hoursNew +='II';    
         break;
     case 3:
        hoursNew += 'III';
@@ -52,6 +53,9 @@ if (minutes==0) {minutesNew = '0'}
      ost = minutes % 10;
     switch ((minutes - ost)/10)
    { 
+    case 0:
+       minutesNew = '';
+        break;
     case 1:
        minutesNew = 'X';
         break;
@@ -60,6 +64,7 @@ if (minutes==0) {minutesNew = '0'}
         break;
 	case 3:
        minutesNew = 'XXX';
+	    break;
 	case 4:
        minutesNew = 'XL';
         break;
@@ -73,7 +78,7 @@ if (minutes==0) {minutesNew = '0'}
     switch (ost) {
   
     case 1:
-       minutesNew += 'I';minutesNew
+       minutesNew += 'I';
         break;
     case 2:
        minutesNew += 'II';
